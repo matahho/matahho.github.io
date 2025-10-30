@@ -35,7 +35,7 @@ I’m particularly interested in:
 When I’m not coding or wrestling with research papers, I enjoy:
 
 - 🏐 **Volleyball** — I’m a professional volleyball player and used to compete in the national league when I was younger 😄  
-- 👨🏻‍🍳 **Cooking** — especially Persian dishes (there’s nothing quite like homemade tahchin!)  
+- 👨🏻‍🍳 **Cooking** — especially Persian dishes (there’s nothing quite like homemade tahchin!) 🍛 
 - 🧗‍♂️ **Family** — a bit of a cliché, I know, but my parents are truly remarkable people ❤️  
 - 🎵 **Friends** — my gorgeous girlfriend Ghazal, Amirali, and Setareh are my favorite partners in adventure. (You’re absolutely right if you think my girlfriend made me write this. 🤪🆘)  
 
