@@ -1,6 +1,6 @@
 ---
-title: "Knowledge Graph–based System Diagnostics (McGill University)"
-excerpt: "Expanding a Knowledge Graph–based framework for performance anomaly detection in distributed systems using RAG and LTTng tracing.<br/><br/><br/>"
+title: "🕸️ Knowledge Graph–based System Diagnostics (McGill University)"
+excerpt: "Expanding a Knowledge Graph–based framework for performance anomaly detection in distributed systems using RAG and LTTng tracing.<br/>"
 collection: research
 ---
 

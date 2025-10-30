@@ -7,8 +7,20 @@ author_profile: true
 
 {% include base_path %}
 
-
 {% for post in site.research %}
   {% include archive-single.html %}
+
+  {% unless forloop.last %}
+    <hr class="post-divider">
+  {% endunless %}
 {% endfor %}
 
+<style>
+  .post-divider {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right, #01412f, #00fa92);
+    margin: 40px 0;
+    border-radius: 5px;
+  }
+</style>

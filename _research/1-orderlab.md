@@ -1,6 +1,6 @@
 ---
 title: "🧠 Ordered Systems Lab (University of Michigan)"
-excerpt: "Exploring program synthesis and automated validation for reliable, self-verifying distributed systems at the University of Michigan’s Ordered Systems Lab.<br/><br/><br/>"
+excerpt: "Exploring program synthesis and automated validation for reliable, self-verifying distributed systems at the University of Michigan’s Ordered Systems Lab.<br/>"
 collection: research
 ---
 

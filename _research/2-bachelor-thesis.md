@@ -1,6 +1,6 @@
 ---
-title: "Deterministic LLM Inference for Real-Time CPS (Bachelor Thesis)"
-excerpt: "Investigating batch-invariance and methods to defeat nondeterminism in LLM inference for safety-critical embedded systems.<br/><br/><br/>"
+title: "🤖 Deterministic LLM Inference for Real-Time CPS (Bachelor Thesis)"
+excerpt: "Investigating batch-invariance and methods to defeat nondeterminism in LLM inference for safety-critical embedded systems.<br/>"
 collection: research
 ---
 
