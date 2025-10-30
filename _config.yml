@@ -29,7 +29,7 @@ author:
   location         : "Tehran"
   employer         : "University of Michigan"
   uri              : # URL
-  email            : "mehdihaji@ut.ac.ir" 
+  email            : "Mata1381@gmail.com" 
 
   # Academic websites
   academia         : # URL
@@ -68,7 +68,7 @@ author:
   steam            : # Username
   telegram         : # URL
   tumblr           : # Username
-  twitter          : # Username for X / Twitter
+  twitter          : mahdi_haji_2003
   vine             : # Username
   weibo            : # Username
   wikipedia        : # Username
@@ -84,6 +84,8 @@ publication_category:
     title: 'Journal Articles'    
   conferences:
     title: 'Conference Papers'
+  preprint:
+    title: 'Preprint'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"

@@ -13,7 +13,7 @@ I’m **Mahdi**, a Computer Engineering student at the **University of Tehran**.
 
 Currently, I’m a **Research Assistant** at the [Ordered Systems Lab, University of Michigan](https://orderlab.io/team.html), advised by [**Prof. Peng Huang**](https://web.eecs.umich.edu/~ryanph/).  
 
-These days, I’m also working on my **bachelor’s thesis** under the supervision of **Prof. Kargahi**, investigating **batch-invariance** and **nondeterminism in LLM inference** to eliminate nondeterministic outcomes in real-time embedded cyber-physical systems (CPS).
+These days, I’m also working on my **bachelor’s thesis** under the supervision of [**Prof. Kargahi**](https://scholar.google.com/citations?user=oH19bK4AAAAJ&hl=en), investigating **batch-invariance** and [**nondeterminism in LLM inference**](https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/) to eliminate nondeterministic outcomes in real-time embedded cyber-physical systems (CPS).
 
 ---
 
@@ -24,9 +24,9 @@ I’m particularly interested in:
 
 - **Federated Learning** — exploring the intersection of distributed systems and artificial intelligence  
 - **Design & Analysis of Deep Neural Networks** — including CNNs, LSTMs, and GANs, and mitigating the risk of adversarial attacks on these systems  
-- Moving toward a **deterministic solution for LLM inference** in safety-critical systems  
-- **Reinforcement Learning** for **autonomous and safety-critical environments**  
-- **Test-guided program synthesis** for system correctness and checker generation, and **semantic violation detection** in large-scale distributed systems  
+- Moving toward a **deterministic solution for LLM inference** in safety-critical systems   
+- **Distributed Systems Reliability & Testing** — designing **runtime validators** and **test-guided program synthesizers** to detect *silent semantic violations* in large-scale systems such as ZooKeeper, Kafka, and HBase, and building tools for reliable distributed computation  
+
 
 ---
 
