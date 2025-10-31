@@ -8,259 +8,234 @@ author_profile: true
 {% include base_path %}
 
 <style>
-/* ---------- Publications — creative gallery + timeline ---------- */
-.pub-wrap { margin-top: 1rem; }
+:root{
+  --card-max-width: 1000px;
+  --thumb-width: 320px;
+  --thumb-height: 200px;
+  --accent:#0b3b78;
+}
+
+/* Container */
+.pub-wrap { margin-top: 1rem; padding-bottom:2rem; }
+
+/* Hero + controls */
 .pub-hero {
   display:flex;
-  flex-wrap:wrap;
   gap:1rem;
   align-items:center;
   justify-content:space-between;
-  margin-bottom:1.25rem;
+  padding: .9rem 1rem;
+  border-radius:10px;
+  background: linear-gradient(90deg, rgba(3,105,161,0.04), rgba(0,158,127,0.02));
+  border:1px solid rgba(8,20,40,0.03);
+  margin-bottom:1rem;
 }
-.pub-hero .left {
-  min-width: 320px;
-}
-.pub-title { font-size:1.65rem; font-weight:700; margin:0 0 .25rem 0; }
-.pub-sub { color:#555; margin:0; }
-.filter-bar { display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.75rem; }
+.pub-sub { color:#374151; margin:0; font-size:.95rem; }
+
+/* filter bar */
+.filter-bar { display:flex; gap:.5rem; flex-wrap:wrap; }
 .filter-btn {
-  border:1px solid rgba(15,15,15,0.06);
-  background: #fff;
-  padding:.45rem .75rem;
-  border-radius:999px;
-  cursor:pointer;
-  font-weight:600;
-  color:#374151;
-  box-shadow: 0 6px 20px rgba(12,25,40,0.03);
-  transition: all .18s ease;
-}
-.filter-btn.active { background:#112e65; color:#fff; border-color: rgba(17,46,101,0.85); box-shadow: 0 10px 30px rgba(17,46,101,0.12); }
-.filter-btn[data-cat="all"] { background: linear-gradient(90deg,#eef2ff,#fff); border-color:#e6e9ff; color:#111827; }
-.controls { display:flex; gap:.5rem; align-items:center; }
-
-/* grid + timeline */
-.pub-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 380px)); /* 👈 slightly narrower cards */
-  justify-content: center; /* 👈 center cards when there are fewer items */
-  gap: 1rem;
-}
-.pub-card {
-  background: linear-gradient(180deg,#ffffff,#fbfdff);
-  border-radius:12px;
-  overflow:hidden;
-  border:1px solid rgba(15,15,15,0.04);
-  box-shadow: 0 12px 30px rgba(8,18,35,0.04);
-  transition: transform .18s ease, box-shadow .18s ease;
-  display:flex;
-  flex-direction:column;
-  min-height: 220px;
-}
-.pub-card:hover { transform: translateY(-6px); box-shadow: 0 20px 42px rgba(8,18,35,0.06); }
-.pub-thumb {
-  width: 100%;
-  height: 180px; /* 👈 fixed height */
-  object-fit: cover; /* 👈 ensures image doesn't stretch */
-  border-bottom: 1px solid rgba(15,15,15,0.05);
-  background: #f8fafc;
-  display: block;
-}
-.pub-body { padding:0.9rem 1rem 1.1rem 1rem; display:flex; flex-direction:column; gap:.45rem; flex:1 1 auto; }
-.pub-title-card { font-weight:700; font-size:1.02rem; margin:0; color:#0f172a; }
-.pub-meta { color:#475569; font-size:.9rem; display:flex; gap:.6rem; flex-wrap:wrap; align-items:center; }
-.pub-meta a { color:inherit; text-decoration:underline; text-decoration-thickness:1px; }
-.pub-excerpt { color:#374151; font-size:.93rem; margin-top:.35rem; flex:1 1 auto; }
-
-/* tags / badges */
-.badge {
-  background: rgba(99,102,241,0.1);
-  color:#3f3ff0;
-  font-weight:700;
-  padding:.28rem .5rem;
-  border-radius:999px;
-  font-size:.8rem;
-}
-
-/* year strip for timeline */
-.year-strip {
-  display:flex;
-  align-items:center;
-  gap:.6rem;
-  margin:1.5rem 0 .6rem 0;
-}
-.year-pill {
-  background:linear-gradient(90deg,#111827,#0b3b78);
-  color:#fff;
   padding:.4rem .7rem;
   border-radius:999px;
+  background:#fff;
+  border:1px solid rgba(8,20,40,0.04);
   font-weight:700;
-  font-size:.95rem;
-  box-shadow: 0 6px 18px rgba(11,59,120,0.12);
-}
-
-/* small controls / details */
-.pub-actions { display:flex; gap:.5rem; align-items:center; }
-.link-btn {
-  background:transparent;
-  border:none;
-  padding:.35rem .5rem;
   cursor:pointer;
-  font-weight:700;
-  color:#0b3b78;
 }
+.filter-btn.active { background:var(--accent); color:#fff; border-color: rgba(8,20,40,0.06); }
+
+/* year header */
+.year-strip { display:flex; align-items:center; gap:.6rem; margin:1.25rem 0 .6rem 0; }
+.year-pill { background:var(--accent); color:#fff; padding:.35rem .6rem; border-radius:999px; font-weight:700; }
+
+/* list (single-row cards) */
+.pub-list { display:flex; flex-direction:column; gap:1rem; margin-top:.6rem; }
+
+.pub-card {
+  width:100%;
+  max-width: var(--card-max-width);
+  margin: 0 auto;
+  display:flex;
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid rgba(8,20,40,0.04);
+  box-shadow: 0 10px 28px rgba(8,20,40,0.04);
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+.pub-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(8,20,40,0.06); }
+
+/* left thumbnail / placeholder */
+.pub-thumb-wrap {
+  flex: 0 0 var(--thumb-width);
+  width: var(--thumb-width);
+  height: var(--thumb-height);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(135deg,#0b3b78,#0b6f94);
+  color:#fff;
+  font-weight:800;
+  font-size:1.6rem;
+  border-right:1px solid rgba(8,20,40,0.03);
+  object-fit:cover;
+}
+.pub-thumb-wrap img { width:100%; height:100%; object-fit:cover; display:block; }
+
+/* content */
+.pub-body {
+  padding: 1rem 1.15rem;
+  display:flex;
+  flex-direction:column;
+  gap:.45rem;
+  flex:1 1 auto;
+}
+.pub-title { font-weight:700; font-size:1.08rem; margin:0; color:#071433; }
+.pub-meta { color:#475569; font-size:.9rem; display:flex; gap:.6rem; align-items:center; flex-wrap:wrap; }
+.pub-excerpt { color:#374151; font-size:.95rem; margin-top:.25rem; flex:1 1 auto; }
+
+/* right actions */
+.pub-actions { display:flex; justify-content:flex-end; gap:.6rem; margin-top:.6rem; align-items:center; }
+.link-btn { background:transparent; border:none; color:var(--accent); font-weight:700; cursor:pointer; padding:.3rem .45rem; }
 .link-btn:hover { text-decoration:underline; }
 
-.empty-state { text-align:center; color:#6b7280; padding:2rem 0; }
+/* category accent on left border */
+.pub-card[data-category="preprints"] { border-left:6px solid #0f7a3f; }
+.pub-card[data-category="conferences"] { border-left:6px solid #0b6f94; }
+.pub-card[data-category="journal"] { border-left:6px solid #b45309; }
 
-/* responsive tweaks */
-@media (max-width:720px) {
-  .pub-hero { flex-direction:column; align-items:flex-start; gap:.5rem; }
-  .pub-thumb { height:140px; }
+/* responsive */
+@media (max-width:900px) {
+  :root{ --thumb-width: 150px; --thumb-height: 110px; --card-max-width: 920px; }
+  .pub-card { flex-direction: column; max-width: 92%; }
+  .pub-thumb-wrap { width:100%; height:160px; border-right:0; border-bottom:1px solid rgba(8,20,40,0.03); }
+  .pub-thumb-wrap img { height:160px; }
+  .pub-body { padding:.9rem; }
 }
 </style>
 
 <div class="pub-wrap">
 
-  <!-- Hero + filters -->
+  <!-- Hero -->
   <div class="pub-hero">
-    <div class="left">
-      <!-- <div class="pub-title">Publications</div> -->
-      <div class="pub-sub">Selected work — preprints, submitted papers, and conference manuscripts. Click a card to open details or the paper link.</div>
+    <div>
+      <div class="pub-sub">Selected publications — preprints, submitted papers, and conference manuscripts.</div>
     </div>
 
-    <div class="controls" role="toolbar" aria-label="Publication filters">
-      <div class="filter-bar" id="pubFilters">
-        <button class="filter-btn" data-cat="all">Show all</button>
-        {% comment %} Build filter buttons from categories present in site.publications {% endcomment %}
-        {% assign cats = "" | split: "" %}
-        {% for p in site.publications %}
-          {% if p.category and cats contains p.category == false %}
-            {% assign cats = cats | push: p.category %}
-          {% endif %}
-        {% endfor %}
-        {% for c in cats %}
-          <button class="filter-btn" data-cat="{{ c | downcase }}">{{ c | capitalize }}</button>
-        {% endfor %}
-      </div>
+    <div class="filter-bar" id="pubFilters" role="toolbar" aria-label="publication filters">
+      {% assign cats = "" | split: "" %}
+      {% for p in site.publications %}
+        {% if p.category and cats contains p.category == false %}
+          {% assign cats = cats | push: p.category %}
+        {% endif %}
+      {% endfor %}
+      {% for c in cats %}
+        <button class="filter-btn" data-cat="{{ c | downcase }}">{{ c | capitalize }}</button>
+      {% endfor %}
     </div>
   </div>
 
-  <!-- If there are no publications -->
   {% unless site.publications.size > 0 %}
-    <div class="empty-state">No publications yet — this space will show your papers, preprints, and conference contributions.</div>
+    <div style="text-align:center;color:#6b7280;padding:2rem 0;">No publications yet — this space will show your papers and preprints.</div>
   {% endunless %}
 
-  <!-- Group by year and render grid per year -->
   {% assign pubs_by_year = site.publications | group_by_exp:"item", "item.date | date: '%Y'" %}
   {% assign sorted_years = pubs_by_year | sort: "name" %}
-  {% for year_group in sorted_years reversed %}
-    <div class="year-strip" aria-hidden="true">
-      <div class="year-pill">{{ year_group.name }}</div>
-      <div style="color:#6b7280; font-size:.95rem;">{{ year_group.items | size }} publications</div>
-    </div>
+  <div class="pub-list">
+    {% for year_group in sorted_years reversed %}
+      <div class="year-strip">
+        <div class="year-pill">{{ year_group.name }}</div>
+        <div style="color:#6b7280; font-size:.95rem;">{{ year_group.items | size }} publication{% if year_group.items | size > 1 %}s{% endif %}</div>
+      </div>
 
-    <div class="pub-grid" data-year="{{ year_group.name }}">
       {% for post in year_group.items %}
-        {% assign teaser = nil %}
-        {% if post.header.teaser %}
-          {% assign teaser = post.header.teaser %}
-        {% else %}
-          {% assign teaser = "500x300.png" %}
-        {% endif %}
+        {%- comment -%}
+          teaser or placeholder initials
+        {%- endcomment -%}
+        {% assign teaser = post.header.teaser | default: post.image | default: "" %}
+        {% assign words = post.title | split: ' ' %}
+        {% assign first_letter = words[0] | default: '' | slice: 0,1 | upcase %}
+        {% assign second_letter = words[1] | default: '' | slice: 0,1 | upcase %}
+        {% assign initials = first_letter | append: second_letter %}
 
-        <article class="pub-card" data-category="{{ post.category | downcase }}" data-year="{{ post.date | date: '%Y' }}" itemscope itemtype="http://schema.org/ScholarlyArticle">
-          {% comment %} Thumbnail / teaser {% endcomment %}
-          <a href="{{ post.paperurl | default: (base_path | append: post.url) }}" target="_blank" rel="noopener" title="{{ post.title }}">
-            {% if teaser contains '://' %}
-              <img class="pub-thumb" src="{{ teaser }}" alt="{{ post.title }} thumbnail">
+        <article class="pub-card" data-category="{{ post.category | default: 'other' | downcase }}" data-year="{{ post.date | date: '%Y' }}">
+          <a href="{{ base_path }}{{ post.url }}" title="Open {{ post.title }}" style="display:block;text-decoration:none;color:inherit;">
+            {% if teaser != "" %}
+              {% if teaser contains '://' %}
+                <div class="pub-thumb-wrap"><img src="{{ teaser }}" alt="{{ post.title }} thumbnail"></div>
+              {% else %}
+                <div class="pub-thumb-wrap"><img src="{{ teaser | prepend: '/images/' | prepend: base_path }}" alt="{{ post.title }} thumbnail"></div>
+              {% endif %}
             {% else %}
-              <img class="pub-thumb" src="{{ teaser | prepend: "/images/" | prepend: base_path }}" alt="{{ post.title }} thumbnail">
+              <div class="pub-thumb-wrap" aria-hidden="true">{{ initials | default: post.title | slice: 0,1 | upcase }}</div>
             {% endif %}
           </a>
 
           <div class="pub-body">
-            <div style="display:flex;justify-content:space-between;gap:.5rem;align-items:flex-start">
-              <h3 class="pub-title-card" itemprop="headline">{{ post.title }}</h3>
-              <div class="badge">{{ post.category | default: "publication" | capitalize }}</div>
-            </div>
-
+            <h3 class="pub-title"><a href="{{ base_path }}{{ post.url }}" style="color:inherit;text-decoration:none;">{{ post.title }}</a></h3>
             <div class="pub-meta">
-              <span aria-hidden="true">📍</span>
-              <span class="venue" itemprop="publisher" aria-label="venue">{% if post.venue %}{{ post.venue }}{% else %}—{% endif %}</span>
-              <span>•</span>
+              <span class="venue">{% if post.venue %}{{ post.venue }}{% else %}—{% endif %}</span> •
               <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+              <span style="margin-left:auto;font-weight:700;color:var(--accent)">{{ post.category | default: "Publication" | capitalize }}</span>
             </div>
 
             <div class="pub-excerpt">
               {% if post.excerpt %}
-                {{ post.excerpt | markdownify | strip_html | truncate:220 }}
+                {{ post.excerpt | markdownify | strip_html | truncate: 300 }}
               {% else %}
-                {% capture short %}{{ post.content | strip_html | truncatewords: 40 }}{% endcapture %}
-                {{ short }}
+                {{ post.content | strip_html | truncatewords: 40 }}
               {% endif %}
             </div>
 
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:.6rem">
-              <div class="pub-actions">
+            <div class="pub-actions">
+              <div>
                 {% if post.paperurl %}
-                  <a class="link-btn" href="{{ post.paperurl }}" target="_blank" rel="noopener">View paper ↗</a>
+                  <a class="link-btn" href="{{ post.paperurl }}" target="_blank" rel="noopener">View paper</a>
                 {% endif %}
                 {% if post.slidesurl %}
-                  <a class="link-btn" href="{{ post.slidesurl }}" target="_blank" rel="noopener">Slides ↗</a>
+                  <a class="link-btn" href="{{ post.slidesurl }}" target="_blank" rel="noopener">Slides</a>
                 {% endif %}
                 {% if post.bibtexurl %}
-                  <a class="link-btn" href="{{ post.bibtexurl }}" target="_blank" rel="noopener">BibTeX ↗</a>
+                  <a class="link-btn" href="{{ post.bibtexurl }}" target="_blank" rel="noopener">BibTeX</a>
                 {% endif %}
               </div>
-
               <div>
-                <!-- LINK TO THE FULL PUBLICATION PAGE -->
-                <a class="link-btn" href="{{ base_path }}{{ post.url }}" title="Open publication page">Details ↗</a>
+                <a class="link-btn" href="{{ base_path }}{{ post.url }}">Details</a>
               </div>
             </div>
           </div>
         </article>
       {% endfor %}
-    </div>
-  {% endfor %}
-
-  <!-- Footer small note -->
-  <!-- <div style="margin-top:1.25rem;color:#6b7280;font-size:.95rem;">
-    Tip: Use the category buttons above to filter by Preprints / Conferences. Cards link to the paper when a direct paper URL is available.
-  </div> -->
+    {% endfor %}
+  </div>
 </div>
 
 <script>
-/* ---------- lightweight client filtering ---------- */
 (function(){
-  const btns = document.querySelectorAll('.filter-btn');
-  const gridCards = () => Array.from(document.querySelectorAll('.pub-card'));
-  const allBtn = document.querySelector('.filter-btn[data-cat="all"]');
+  const btns = Array.from(document.querySelectorAll('.filter-btn'));
+  const cards = () => Array.from(document.querySelectorAll('.pub-card'));
 
-  // Set default active
-  if (allBtn) allBtn.classList.add('active');
-
+  // Clicking a category button toggles that filter:
+  // - if a button is active and clicked again -> clear filter (show all)
+  // - otherwise set only that category visible
   btns.forEach(b => {
     b.addEventListener('click', () => {
+      const isActive = b.classList.contains('active');
+      // reset all
       btns.forEach(x => x.classList.remove('active'));
-      b.classList.add('active');
-      const cat = b.getAttribute('data-cat');
-      const cards = gridCards();
-      if (cat === 'all') {
-        cards.forEach(c => c.style.display = '');
+      if (isActive) {
+        // toggle off -> show all
+        cards().forEach(c => c.style.display = '');
       } else {
-        cards.forEach(c => {
-          if ((c.getAttribute('data-category') || '').toLowerCase() === cat.toLowerCase()) {
-            c.style.display = '';
-          } else {
-            c.style.display = 'none';
-          }
+        // activate clicked and filter
+        b.classList.add('active');
+        const cat = b.getAttribute('data-cat').toLowerCase();
+        cards().forEach(c => {
+          c.style.display = ((c.getAttribute('data-category')||'').toLowerCase() === cat) ? '' : 'none';
         });
       }
-      // scroll to first visible year strip if mobile
-      const firstVisible = document.querySelector('.pub-card[style*="display:"]') || document.querySelector('.pub-card');
-      if (firstVisible) firstVisible.scrollIntoView({behavior:'smooth', block:'start'});
+      // scroll first visible into view (mobile friendly)
+      const first = document.querySelector('.pub-card[style*="display:"]') || document.querySelector('.pub-card');
+      if (first) first.scrollIntoView({behavior:'smooth', block:'start'});
     });
   });
 })();

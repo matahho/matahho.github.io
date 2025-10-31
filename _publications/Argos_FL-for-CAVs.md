@@ -4,7 +4,7 @@ collection: publications
 category: preprints
 permalink: /publication/Argos_FL-for-CAVs
 date: 2025-08-01
-venue: 'presented at the <a href="https://www.youtube.com/live/sf9XzYaUeZM?si=b70bNPSQ6Ho3aHXr">Flower Event</a>, University of Cambridge'
+venue: 'Presented at the <a href="https://www.youtube.com/live/sf9XzYaUeZM?si=b70bNPSQ6Ho3aHXr">Flower Event</a>, University of Cambridge'
 # slidesurl: 'https://www.youtube.com/live/sf9XzYaUeZM?si=b70bNPSQ6Ho3aHXr'
 paperurl: 'https://arxiv.org/abs/2508.12712'
 # bibtexurl: 'http://academicpages.github.io/files/bibtex1.bib'
