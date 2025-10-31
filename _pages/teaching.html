@@ -1,12 +1,193 @@
 ---
-layout: archive
-title: "Teaching"
+title: "📚 Teaching Experience"
 permalink: /teaching/
 author_profile: true
 ---
 
-{% include base_path %}
+<style>
+/* General layout */
+.teaching-hero {
+  background: linear-gradient(180deg, rgba(3, 106, 85, 0.06), transparent 600%);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.teaching-hero .emoji {
+  font-size: 2.2rem;
+}
+.teaching-intro {
+  font-size: 1rem;
+  color: #1b1b1b;
+  line-height: 1.5;
+}
+.section-title {
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  margin: 1.5rem 0 0.75rem 0;
+  font-size:1.05rem;
+  font-weight:700;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 6px 20px rgba(12, 25, 40, 0.06);
+  transition: transform .18s ease, box-shadow .18s ease;
+  overflow: hidden;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(12,25,40,0.08);
+}
+.card .role {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.card .prof {
+  color: #4b5563;
+  font-size: .95rem;
+  margin-bottom: .75rem;
+}
+.card .desc {
+  color: #374151;
+  font-size: .95rem;
+  margin-bottom: .75rem;
+}
+.card .meta {
+  display:flex;
+  gap:.5rem;
+  flex-wrap:wrap;
+  font-size: .9rem;
+  color:#6b7280;
+}
+.small-note {
+  color:#6b7280;
+  font-size:.95rem;
+  margin-top: 1rem;
+}
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+/* Themed color sections */
+.blue-section .card {
+  border-left: 4px solid #3b82f6;
+  background: linear-gradient(180deg, #f0f7ff, #fff);
+}
+.green-section .card {
+  border-left: 4px solid #10b981;
+  background: linear-gradient(180deg, #f2fcf6, #fff);
+}
+.gold-section .card {
+  border-left: 4px solid #fbbf24;
+  background: linear-gradient(180deg, #fffdf6, #fff);
+}
+@media (max-width:640px){
+  .teaching-hero {flex-direction:row;gap:.75rem}
+  .teaching-intro {font-size:.95rem}
+}
+</style>
+
+<section class="teaching-page">
+
+  <!-- Header -->
+  <header class="teaching-hero">
+    <div class="emoji">🎓</div>
+    <div class="teaching-intro">
+      <strong>Teaching has been one of the most rewarding parts of my academic life.</strong>
+      <div style="margin-top:.4rem">
+        I’ve supported courses across programming, systems, algorithms, and mathematics at the <em>University of Tehran</em> — from coordinating large intro labs to mentoring advanced software projects.
+      </div>
+    </div>
+  </header>
+
+  <!-- Head TA Section -->
+  <h2 class="section-title">🧠 Head Teaching Assistant Roles</h2>
+  <div class="grid blue-section">
+    <article class="card">
+      <div class="role">Introduction to Computing Systems & Programming <span style="font-weight:600;color:#3b82f6">• Head TA</span></div>
+      <div class="prof"><a href="https://scholar.google.com/citations?user=6-6ZdxMAAAAJ&hl=en">Prof. Moradi</a></div>
+      <div class="desc">Manage TAs to design new projects for first-year students, mentored new TAs, and redesigned course materials to make C programming more approachable.</div>
+      <div class="meta"><span>TA Mentoring</span><span>Lab coordination</span><span>Projects coordination</span></div>
+    </article>
+
+    <article class="card">
+      <div class="role">Software Testing <span style="font-weight:600;color:#3b82f6">• Head TA</span></div>
+      <div class="prof"><a href="https://scholar.google.com/citations?user=J22L-gEAAAAJ&hl=en">Dr. Khames-Panah</a></div>
+      <div class="desc">Led practical sessions, designed assignment harnesses, and introduced unit testing and CI workflows.</div>
+      <div class="meta"><span>Testing frameworks</span><span>TDD</span><span>Spring Boot</span><span>JUnit</span><span>BDD</span></div>
+    </article>
+
+    <article class="card">
+      <div class="role">Software Engineering <span style="font-weight:600;color:#3b82f6">• Head TA</span></div>
+      <div class="prof"><a href="https://scholar.google.com/citations?user=ymM5kfAAAAAJ&hl">Prof. Ghasemi</a></div>
+      <div class="desc">Supervised software projects, emphasizing design patterns, toward software architecture desing, and clean documentation.</div>
+      <div class="meta"><span>Software architecture</span><span>Design patterns</span><span>Team Leadership</span></div>
+    </article>
+  </div>
+
+  <!-- Teaching Assistant Section -->
+  <h2 class="section-title">💡 Teaching Assistant Roles</h2>
+  <div class="grid green-section">
+    <article class="card">
+      <div class="role">Data Structures & Algorithms <span style="font-weight:600;color:#10b981">• TA</span></div>
+      <div class="prof"><a href="https://scholar.google.com/citations?user=m5tCFEoAAAAJ&hl=en">Prof. Faili</a></div>
+      <div class="desc">Led algorithmic problem-solving sessions and design quizes for students on subjects such as: Time Complexity, Graph, Data Structures, Network Flow, B-Tree</div>
+      <div class="meta"><span>Algorithms</span><span>Complexity</span><span>Data Structures</span></div>
+    </article>
+
+    <article class="card">
+      <div class="role">Operating Systems <span style="font-weight:600;color:#10b981">• TA</span></div>
+      <div class="prof"><a href="https://scholar.google.com/citations?user=oH19bK4AAAAJ&hl=en">Prof. Kargahi</a></div>
+      <div class="desc">Design projects for scheduling, synchronization in xv6, multi-thread programming, and virtual memory management</div>
+      <div class="meta"><span>xv6</span><span>Concurrency</span><span>OS</span><span>Synchronization</span></div>
+    </article>
+
+    <article class="card">
+      <div class="role">Compiler & Programming Languages <span style="font-weight:600;color:#10b981">• TA</span></div>
+      <div class="prof"><a href="https://scholar.google.com/citations?user=GODPpvgAAAAJ&hl=en">Dr. Tavasoli</a></div>
+      <div class="desc">Supported compiler construction projects — lexical analysis, parsing, and code generation labs.</div>
+      <div class="meta"><span>Compilers</span><span>ANTLR</span><span>Language design</span><span>Java Byte-Code</span><span>Jasmin</span></div>
+    </article>
+
+    <article class="card">
+      <div class="role">Computer Networks <span style="font-weight:600;color:#10b981">• TA</span></div>
+      <div class="prof"><a href="https://scholar.google.com/citations?user=Xfvk1SoAAAAJ&hl=en">Prof. Khonsari</a></div>
+      <div class="desc">Design Homework on TCP/IP, routing, and socket programming; guided labs with Wireshark and Mininet.</div>
+      <div class="meta"><span>Networking</span><span>Sockets</span><span>TCP/IP</span></div>
+    </article>
+
+    <article class="card">
+      <div class="role">Ordinary Differential Equations <span style="font-weight:600;color:#10b981">• TA</span></div>
+      <div class="prof"><a href="https://scholar.google.com/citations?user=at6PgwIAAAAJ&hl=en">Dr. Rahami</a></div>
+      <div class="desc">Helped students bridge mathematical theory with computational applications in real-world questions and samples.</div>
+      <div class="meta"><span>Numerical methods</span><span>Applied math</span><span>ODE</span></div>
+    </article>
+  </div>
+
+  <!-- Instructor Section -->
+  <h2 class="section-title">🏅 Instructor Roles</h2>
+  <div class="grid gold-section">
+    <article class="card">
+      <div class="role">Olympiad Instructor <span style="font-weight:600;color:#d97706">• Teacher</span></div>
+      <div class="prof">Rouzbeh Educational Complex, Tehran</div>
+      <div class="desc">
+        Teaching <strong>Number Theory</strong> and <strong>Geometry</strong> to prepare students for the <em>International Mathematical Olympiad (IMO)</em>.  
+        Focused on problem-solving intuition, proof-based reasoning, and fostering creativity in mathematical thinking.
+      </div>
+      <div class="meta"><span>Math Olympiad</span><span>Number Theory</span><span>Geometry</span></div>
+    </article>
+  </div>
+
+  <div class="small-note">
+    <strong>Why teaching matters:</strong> Teaching taught me to explain complex ideas simply, communicate clearly, and build patience — skills that continue to shape my approach to research and engineering.
+  </div>
+
+</section>
