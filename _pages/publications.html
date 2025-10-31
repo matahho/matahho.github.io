@@ -42,8 +42,9 @@ author_profile: true
 /* grid + timeline */
 .pub-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap:1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 380px)); /* 👈 slightly narrower cards */
+  justify-content: center; /* 👈 center cards when there are fewer items */
+  gap: 1rem;
 }
 .pub-card {
   background: linear-gradient(180deg,#ffffff,#fbfdff);
@@ -57,7 +58,14 @@ author_profile: true
   min-height: 220px;
 }
 .pub-card:hover { transform: translateY(-6px); box-shadow: 0 20px 42px rgba(8,18,35,0.06); }
-.pub-thumb { width:100%; height:160px; object-fit:cover; background:#f3f6ff; display:block; }
+.pub-thumb {
+  width: 100%;
+  height: 180px; /* 👈 fixed height */
+  object-fit: cover; /* 👈 ensures image doesn't stretch */
+  border-bottom: 1px solid rgba(15,15,15,0.05);
+  background: #f8fafc;
+  display: block;
+}
 .pub-body { padding:0.9rem 1rem 1.1rem 1rem; display:flex; flex-direction:column; gap:.45rem; flex:1 1 auto; }
 .pub-title-card { font-weight:700; font-size:1.02rem; margin:0; color:#0f172a; }
 .pub-meta { color:#475569; font-size:.9rem; display:flex; gap:.6rem; flex-wrap:wrap; align-items:center; }
