@@ -7,20 +7,189 @@ author_profile: true
 
 {% include base_path %}
 
-{% for post in site.research %}
-  {% include archive-single.html %}
-
-  {% unless forloop.last %}
-    <hr class="post-divider">
-  {% endunless %}
-{% endfor %}
-
 <style>
-  .post-divider {
-    border: 0;
-    height: 2px;
-    background: linear-gradient(to right, #01412f, #00fa92);
-    margin: 40px 0;
-    border-radius: 5px;
-  }
+/* ---------- Single-row wider cards for Research listing ---------- */
+:root {
+  --card-max-width: 1000px; /* tweak to make cards wider or narrower */
+  --thumb-width: 320px;
+  --thumb-height: 200px;
+  --accent-color: #0b3b78;
+}
+
+.research-wrap { margin-top: 1rem; padding-bottom: 2rem; }
+
+/* header */
+.research-hero {
+  background: linear-gradient(90deg, rgba(3,105,161,0.04), rgba(0,158,127,0.02));
+  padding: .9rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border:1px solid rgba(8,20,40,0.03);
+}
+.hero-title { font-size:1.25rem; font-weight:700; margin:0; }
+.hero-sub { color:#374151; margin-top:.25rem; font-size:.95rem; }
+
+/* sections (year) */
+.section-year { margin: 1.25rem 0 .6rem 0; display:flex; gap:.6rem; align-items:center; }
+.year-badge {
+  background:var(--accent-color);
+  color:#fff;
+  padding:.35rem .6rem;
+  border-radius:999px;
+  font-weight:700;
+  font-size:.95rem;
+}
+
+/* list container */
+.research-list { display:flex; flex-direction:column; gap:1rem; margin-top:.6rem; }
+
+/* each card is full-width row but centered with a max width */
+.card {
+  width: 100%;
+  max-width: var(--card-max-width);
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  border:1px solid rgba(8,20,40,0.04);
+  box-shadow: 0 10px 28px rgba(8,20,40,0.04);
+  transition: transform .14s ease, box-shadow .14s ease;
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+}
+.card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(8,20,40,0.06); }
+
+/* thumbnail column (left) */
+.card .thumb-wrap {
+  flex: 0 0 var(--thumb-width);
+  width: var(--thumb-width);
+  height: var(--thumb-height);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(135deg,#0b3b78,#0b6f94);
+  color:#fff;
+  font-weight:800;
+  font-size:1.6rem;
+  border-right:1px solid rgba(8,20,40,0.03);
+  object-fit:cover;
+}
+.card img.thumb {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* content column (right) */
+.card .body {
+  padding: 1rem 1.15rem;
+  display:flex;
+  flex-direction:column;
+  gap:.45rem;
+  flex:1 1 auto;
+}
+.title { font-weight:700; font-size:1.06rem; margin:0; color:#071433; }
+.meta { color:#475569; font-size:.9rem; display:flex; gap:.6rem; align-items:center; flex-wrap:wrap; }
+.excerpt { color:#374151; font-size:.95rem; margin-top:.25rem; flex:1 1 auto; }
+
+/* small action row */
+.actions { display:flex; justify-content:flex-end; gap:.6rem; margin-top:.6rem; align-items:center; }
+.link-btn { background:transparent; border:none; color:var(--accent-color); font-weight:700; text-decoration:none; cursor:pointer; padding:.3rem .45rem; }
+.link-btn:hover { text-decoration:underline; }
+
+/* small labels */
+.type-label { margin-left:auto; font-weight:700; color:var(--accent-color); }
+
+/* responsive: stack on small screens */
+@media (max-width:900px) {
+  :root { --thumb-width: 150px; --thumb-height: 110px; --card-max-width: 920px; }
+  .card { flex-direction: column; max-width: 92%; }
+  .card .thumb-wrap { width:100%; height:160px; border-right:0; border-bottom:1px solid rgba(8,20,40,0.03); }
+  .card img.thumb { height:160px; }
+  .body { padding: .9rem; }
+}
+
+/* very small screens */
+@media (max-width:480px) {
+  .hero-title { font-size:1.1rem; }
+  .card .thumb-wrap { height:120px; }
+  .excerpt { font-size:.92rem; }
+}
 </style>
+
+<div class="research-wrap">
+
+  <header class="research-hero" role="banner">
+    <div>
+      <div class="hero-title">Research — selected projects & collaborations</div>
+      <div class="hero-sub">Work at OrderLab, bachelor thesis, internships and related research projects.</div>
+    </div>
+  </header>
+
+  {% assign research_by_year = site.research | group_by_exp: "item", "item.date | date: '%Y' " %}
+  {% assign years_sorted = research_by_year | sort: "name" | reverse %}
+
+  <div class="research-list">
+    {% for group in years_sorted %}
+      <section aria-labelledby="year-{{ group.name }}">
+        <div class="section-year" id="year-{{ group.name }}">
+          <div class="year-badge">{{ group.name }}</div>
+          <div style="color:#6b7280;font-size:.95rem">{{ group.items | size }} item{% if group.items | size > 1 %}s{% endif %}</div>
+        </div>
+
+        {% for post in group.items %}
+          {% assign teaser = post.header.teaser | default: post.image | default: "" %}
+          {%- comment -%}
+            compute initials for placeholder
+          {%- endcomment -%}
+          {% assign words = post.title | split: ' ' %}
+          {% assign first_letter = words[0] | default: '' | slice: 0,1 | upcase %}
+          {% assign second_letter = words[1] | default: '' | slice: 0,1 | upcase %}
+          {% assign initials = first_letter | append: second_letter %}
+
+          <article class="card" role="article" data-year="{{ post.date | date: '%Y' }}">
+            <a href="{{ base_path }}{{ post.url }}" title="Open {{ post.title }}" style="display:block; text-decoration:none; color:inherit;">
+              {% if teaser != "" %}
+                {% if teaser contains '://' %}
+                  <div class="thumb-wrap"><img class="thumb" src="{{ teaser }}" alt="{{ post.title }} thumbnail"></div>
+                {% else %}
+                  <div class="thumb-wrap"><img class="thumb" src="{{ teaser | prepend: '/images/' | prepend: base_path }}" alt="{{ post.title }} thumbnail"></div>
+                {% endif %}
+              {% else %}
+                <div class="thumb-wrap" aria-hidden="true">{{ initials | default: post.title | slice: 0,1 | upcase }}</div>
+              {% endif %}
+            </a>
+
+            <div class="body">
+              <h3 class="title"><a href="{{ base_path }}{{ post.url }}" style="color:inherit;text-decoration:none;">{{ post.title }}</a></h3>
+
+              <div class="meta">
+                {% if post.advisor %}<span>Advisor: {{ post.advisor }}</span> • {% endif %}
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %Y" }}</time>
+                <!-- <span class="type-label">{{ post.type | default: 'Other' | capitalize }}</span> -->
+              </div>
+
+              <div class="excerpt">
+                {% if post.excerpt %}
+                  {{ post.excerpt | markdownify | strip_html | truncate: 260 }}
+                {% else %}
+                  {{ post.content | strip_html | truncatewords: 40 }}
+                {% endif %}
+              </div>
+
+              <div class="actions">
+                <a class="link-btn" href="{{ base_path }}{{ post.url }}">Details</a>
+                {% if post.paperurl %}
+                  <a class="link-btn" href="{{ post.paperurl }}" target="_blank" rel="noopener">Paper ↗</a>
+                {% endif %}
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      </section>
+    {% endfor %}
+  </div>
+
+</div>
