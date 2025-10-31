@@ -1,6 +1,6 @@
 ---
 title: "👨🏻‍💻 Software Engineer at Enigma Investing"
-excerpt: "Developed event-sourced financial systems and a RAG-based stock market analysis agent.<br/><img src='/images/enigma_logo.png'>"
+excerpt: "Developed event-sourced financial systems and a RAG-based stock market analysis agent.<br/>"
 collection: work
 ---
 

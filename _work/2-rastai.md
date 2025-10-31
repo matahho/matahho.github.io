@@ -1,6 +1,6 @@
 ---
 title: "👨🏻‍🏫 Software Engineer at Rasta.ai"
-excerpt: "Building a personalized E-Learning platform powered by Reinforcement Learning and scalable backend architecture.<br/><img src='/images/rastai_logo.png'>"
+excerpt: "Building a personalized E-Learning platform powered by Reinforcement Learning and scalable backend architecture.<br/>"
 collection: work
 ---
 
