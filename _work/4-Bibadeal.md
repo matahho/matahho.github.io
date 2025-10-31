@@ -1,6 +1,6 @@
 ---
 title: "🚀 Co-founder at Bibadeal"
-excerpt: "Co-founded an AI startup delivering NLP-driven business insights; successfully acquired by the accelerator of Iran University of Science and Technology.<br/><img src='/images/bibadeal_logo.png'>"
+excerpt: "Co-founded an AI startup delivering NLP-driven business insights; successfully acquired by the accelerator of Iran University of Science and Technology.<br/>"
 collection: work
 ---
 
