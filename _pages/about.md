@@ -21,8 +21,6 @@ These days, I’m also working on my **bachelor’s thesis** under the supervisi
 
 ---
 
----
-
 # 🔬 Research Interests
 
 My research lies at the intersection of **distributed systems**, **AI systems**, and **operating systems**.  
@@ -43,7 +41,7 @@ When I’m not coding or wrestling with research papers, I enjoy:
 - 🏐 **Volleyball** — I’m a professional volleyball player and used to compete in the national league when I was younger 😄  
 - 👨🏻‍🍳 **Cooking** — especially Persian dishes (there’s nothing quite like homemade tahchin!) 🍛 
 - 🧗‍♂️ **Family** — a bit of a cliché, I know, but my parents are truly remarkable people ❤️  
-- 🎵 **Friends** — my gorgeous girlfriend Ghazal, Amirali, and Setareh are my favorite partners in adventure. (You’re absolutely right if you think my girlfriend made me write this. 🤪🆘)  
+- 🎵 **Friends** — my gorgeous girlfriend [Ghazal](https://www.linkedin.com/in/seyyedeh-ghazal-mousavi/), [Amirali](https://www.linkedin.com/in/amirali-shahriary/?originalSubdomain=ir), and [Setareh](https://www.linkedin.com/in/setareh-dehghanfard/) are my favorite partners in adventure. (You’re absolutely right if you think my girlfriend made me write this. 🤪🆘)  
 
 ---
 
