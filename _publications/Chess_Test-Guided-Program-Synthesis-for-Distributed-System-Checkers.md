@@ -6,6 +6,8 @@ permalink: /publication/Chess_Test-Guided-Program-Synthesis-for-Distributed-Syst
 # excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
 date: 2026-01-01
 venue: 'Submitted to 23rd USENIX Symposium on Networked Systems Design and Implementation - NSDI'
+header:
+  teaser: "chess-workflow.png"
 # slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
 # paperurl: 'http://academicpages.github.io/files/paper1.pdf'
 # bibtexurl: 'http://academicpages.github.io/files/bibtex1.bib'

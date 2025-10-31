@@ -12,13 +12,13 @@ main:
     url: /
 
   - title: "Research"
-    url: /research/    
+    url: /research/  
+
+  - title: "Teaching"
+    url: /teaching/      
 
   - title: "Publications"
     url: /publications/
-
-  - title: "Teaching"
-    url: /teaching/    
     
   # - title: "Portfolio"
   #   url: /portfolio/
