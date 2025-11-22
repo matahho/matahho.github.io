@@ -19,6 +19,8 @@ This work aims to improve the reliability and self-verifiability of modern distr
 
 These days, I’m also working on my **bachelor’s thesis** under the supervision of [**Prof. Kargahi**](https://scholar.google.com/citations?user=oH19bK4AAAAJ&hl=en), investigating **batch-invariance** and [**nondeterminism in LLM inference**](https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/) to eliminate nondeterministic outcomes in real-time embedded cyber-physical systems (CPS).
 
+<span style="color:blue">** I am currently seeking opportunities to pursue an MSc or PhD position.<br>
+If you are aware of suitable openings or potential collaborations, please feel free to contact me.n**</span>
 ---
 
 # 🔬 Research Interests
