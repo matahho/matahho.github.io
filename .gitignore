@@ -1,17 +1,20 @@
-# Ignore the contents of the _site directory and other cache directories
-_site/
-.sass-cache/
+# dependencies
+/node_modules
 
-# Ignore the directory for local files during development
-local/
+# next.js
+/.next/
+/out/
+next-env.d.ts
 
-# Ignore the Gemfile that is generated
-Gemfile.lock
+# misc
+.DS_Store
+*.pem
 
-# Ignore files created by npm
-node_modules
-package-lock.json
+# debug
+npm-debug.log*
 
-# Ignore the vendor file and bundle for alternative installation
-vendor/
-.bundle/
+# local env files
+.env*.local
+
+# typescript
+*.tsbuildinfo
