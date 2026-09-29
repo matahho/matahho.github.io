@@ -39,7 +39,7 @@ function Polaroid() {
 export default function Fun() {
   return (
     <section id="fun" className="mx-auto max-w-6xl px-6 py-32 md:py-44">
-      <SectionHeading index="04" title="Fun" />
+      <SectionHeading index="03" title="Fun" caption="regularization, keeps me from overfitting" />
 
       <div className="grid items-start gap-12 md:grid-cols-2 md:gap-16">
         <Reveal>
@@ -53,7 +53,7 @@ export default function Fun() {
             </p>
           </Reveal>
 
-          {/* Better Call Saul — featured. */}
+          {/* Better Call Saul, featured. */}
           <Reveal className="mt-8">
             <div className="rounded-2xl border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/[0.06] p-6">
               <div className="flex items-center gap-3">

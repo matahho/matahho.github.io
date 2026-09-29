@@ -22,6 +22,8 @@ html {
 
 body {
   background-color: var(--color-bg);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
   color: var(--color-fg);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
@@ -46,6 +48,26 @@ body {
   border-radius: 99px;
 }
 
+.mono {
+  font-family: var(--font-jbmono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* Blinking decode cursor */
+.caret {
+  display: inline-block;
+  width: 0.5em;
+  height: 1.05em;
+  margin-left: 1px;
+  vertical-align: -0.15em;
+  background: var(--color-accent);
+  animation: caret-blink 1s steps(1) infinite;
+}
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 /* Utility: subtle accent glow text */
 .text-accent {
   color: var(--color-accent);
@@ -64,5 +86,8 @@ body {
   .fade-up {
     opacity: 1;
     transform: none;
+  }
+  .caret {
+    animation: none;
   }
 }

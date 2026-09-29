@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
 const body = Inter({
@@ -14,11 +14,17 @@ const display = Space_Grotesk({
   display: "swap",
 });
 
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jbmono",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://matahho.github.io"),
-  title: "Mahdi Haji — Reliability of Distributed Systems",
+  title: "Mahdi Haji · bio = model(mahdi.data)",
   description:
-    "Mahdi Haji — systems researcher building self-verifying distributed software. Incoming PhD at the University of Oxford.",
+    "Mahdi Haji, DPhil (PhD) student in Computer Science at the University of Oxford, working on reliable distributed systems and AI infrastructure.",
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -29,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mahdi Haji",
     description:
-      "Systems researcher building self-verifying distributed software. Incoming PhD at the University of Oxford.",
+      "DPhil (PhD) student in Computer Science at the University of Oxford, working on reliable distributed systems and AI infrastructure.",
     url: "https://matahho.github.io",
     siteName: "Mahdi Haji",
     type: "website",
@@ -42,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${body.variable} ${display.variable}`}>
+    <html lang="en" className={`${body.variable} ${display.variable} ${mono.variable}`}>
       <body>{children}</body>
     </html>
   );

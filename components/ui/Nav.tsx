@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { profile } from "@/lib/content";
 
 const links = [
-  { label: "About", href: "#about" },
+  { label: "Model", href: "#top" },
   { label: "Research", href: "#research" },
   { label: "Work", href: "#work" },
   { label: "Fun", href: "#fun" },
@@ -30,10 +30,10 @@ export default function Nav() {
         backgroundColor: solid ? "rgba(5,7,10,0.6)" : "transparent",
       }}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-8 py-7">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8 md:py-7">
         <a
           href="#top"
-          className="font-[family-name:var(--font-display)] text-2xl font-semibold tracking-[0.2em]"
+          className="font-[family-name:var(--font-display)] text-xl font-semibold tracking-[0.2em] md:text-2xl"
         >
           Mahdi Haji
         </a>
@@ -53,7 +53,7 @@ export default function Nav() {
           href={profile.cv}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full border border-[var(--color-line)] px-6 py-2.5 text-base tracking-wide text-[var(--color-fg)] transition-colors hover:border-[var(--color-accent)] hover:text-accent"
+          className="rounded-full border border-[var(--color-line)] px-4 py-1.5 text-sm tracking-wide md:px-6 md:py-2.5 md:text-base text-[var(--color-fg)] transition-colors hover:border-[var(--color-accent)] hover:text-accent"
         >
           CV
         </a>
